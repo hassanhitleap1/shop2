@@ -1,0 +1,24 @@
+@media only screen and (max-width: 991px) {
+    .nav-item{
+        width: auto;
+        height: 60px;
+    }
+  .nav-item>div{
+    text-align: left;
+    padding-left: 59px;
+    padding-top: 6px;
+  }
+  .nav-link{ 
+    margin-top: -33px;
+  }
+  .dropdown-menu.show{
+    background: #adadad;
+  }
+  .card-text{
+    display: none;
+  }
+  .button-save{
+    opacity: 1;
+  }
+} 
+

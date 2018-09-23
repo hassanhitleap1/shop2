@@ -2,121 +2,120 @@
 use App\Category;
 $collection=Category::all();
 ?>
-<div id="header">
-    <div class="header">
-        <div class="top-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                        <div class="logo">
-                            <a href="{{url('/')}}"><img src="{{asset('/smartbuy/images/logo-1.png')}}" alt="" /></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-7 col-md-7 col-sm-9 col-xs-9">
-                        <nav class="main-nav">
-                            <a href="#" class="toggle-mobile-menu"><span></span></a>
-                            <ul class="list-inline">
-                                <li class="menu-item" ><a href="{{asset('/home')}}">Home</a></li>
-                                @foreach ($collection as $item)
-                                    <li class="menu-item" ><a href="{{asset('?category='.$item->name)}}">{{$item->name}}</a></li>
-                                @endforeach
-                                    
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
-                        <div class="box-right">
-                            <ul class="list-inline">
-                                <li class="mini-cart-box" >
-                                    @guest
-                                    <a href="#"><i class="fa fa-user-o fa-2x" aria-hidden="true"></i><sup></sup></a>
-                                    <div class="mini-cart-content">
-                                        <div class="contact-form">
-                                            <div class="box-product box-has-filter">
-                                                <div class="title">
-                                                    <div class="row">
-                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                            <div class="box-tabs">
-                                                                <ul class="nav nav-tabs list-inline" role="tablist">
-                                                                    <li role="presentation" class="active"><h3><a data-toggle="tab" href="#tab1">login </a></h3></li>
-                                                                    <li role="presentation"><h3><a data-toggle="tab" href="#tab2">register</a></h3></li>							
-                                                                </ul>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                                        <div class="tab-content">
-                                                            <div id="tab1" role="tabpanel" class="tab-pane fade in active">
-                                                                                    <h2 class="title18">login</h2>
-                                                                                <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
-                                                                                    @csrf
-                                                                                    <input id="email" type="email" placeholder="Email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-                                                                                    @if ($errors->has('email'))
-                                                                                        <span class="invalid-feedback" role="alert">
-                                                                                            <strong>{{ $errors->first('email') }}</strong>
-                                                                                        </span>
-                                                                                    @endif
-                                                                                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-                                                                                    @if ($errors->has('password'))
-                                                                                        <span class="invalid-feedback" role="alert">
-                                                                                            <strong>{{ $errors->first('password') }}</strong>
-                                                                                        </span>
-                                                                                    @endif
-                                                                                    <input type="submit" value="login" class="shop-button" />
-                                                                                </form>
-                                                            </div>
-                                                            <div id="tab2" role="tabpanel" class="tab-pane fade in">
-                                                                                    <h2 class="title18">register</h2>
-                                                                                <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
-                                                                                    @csrf
-                                                                                    <input id="email" type="email" placeholder="Email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-                                                                                    @if ($errors->has('email'))
-                                                                                        <span class="invalid-feedback" role="alert">
-                                                                                            <strong>{{ $errors->first('email') }}</strong>
-                                                                                        </span>
-                                                                                    @endif
-                                                                                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-                                                                                    @if ($errors->has('password'))
-                                                                                        <span class="invalid-feedback" role="alert">
-                                                                                            <strong>{{ $errors->first('password') }}</strong>
-                                                                                        </span>
-                                                                                    @endif
-                                                                                    <input type="submit" value="register" class="shop-button" />
-                                                                                </form>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                        
-                                                    </div>
-										   
-									    </div>
-                                    </div>
-                                    @else
-                                        <a  id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><i class="fa fa-user-o" aria-hidden="true"></i><sup>{{substr(Auth::user()->email, -5 )}} ...</sup></a>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                            <ul>
-                                                @if(Auth::user()->admin)
-                                                <li><a href="{{url('/admin')}}" class="fa fa-gears" > admin</a></li>
-                                                @endif
-                                                <li><a href="{{url('my-favorite')}}" class="fa fa-save" > My Favorite</a></li>
-                                                <li>
-                                                    <a class="fa fa-sign-out" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();"> {{ __('Logout') }}
-                                                    </a>
-                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                            @csrf
-                                                        </form>
-                                                </li>
-                                            </ul>
-
-                                        </div>
-                                    @endguest
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+         <div class="pb-2 mt-4 mb-2 border-bottom">
+            <div class="row justify-content-md-center">
+               <div class="col col-lg-4">
+                  <div class="input-group mb-1">
+                     <input type="text" class="form-control" placeholder="search" aria-label="Recipient's username"
+                        aria-describedby="basic-addon2">
+                     <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i> </span>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-auto">
+                  <img src="logo-1.png" class="rounded mx-auto d-block" >
+               </div>
+               <div class="col col-lg-4">
+                  <ul class="float-right list-inline">
+                     <a id="loginClick">
+                        <li class="list-inline-item fas fa-sign-in-alt"></li>
+                        Login
+                     </a>
+                     <a>
+                        <li class="list-inline-item fas fa-user-plus"></li>
+                        Regidter
+                     </a>
+                  </ul>
+               </div>
             </div>
-        </div>
-    </div>
-</div>
+         </div>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light pb-2 ">
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+               <li class="nav-item active" style="background:#ededed; color: black;">
+                  <div align="center ">
+                     <span class="fas fa-home fa-2x mt-2"></span>
+                  </div>
+                  <a class="nav-link" style="color: black !important ;" href="#">Home <span class="sr-only">(current)</span></a>
+               </li>
+               <li class="nav-item" style="background: #d06503  ;">
+                  <div align="center" >
+                    <span class="fas fa-mars fa-2x mt-2"></span>
+                  </div>
+                  <a class="nav-link" href="#">Link</a>
+               </li>
+               <li class="nav-item" style="background: #e9931a;  ;">
+                    <div align="center">
+                      <span class="fas fa-gift fa-2x mt-2"></span>
+                    </div>
+                    <a class="nav-link" href="#">Link</a>
+                 </li>
+               <li class="nav-item" style="    background: #1691be;">
+                  <div align="center">
+                        <span class="fas fa-tv fa-2x mt-2"></span>
+                  </div>
+                  <a class="nav-link disabled" href="#">Disabled</a>
+               </li>
+               <li class="nav-item" style="    background: #166ba2;">
+                    <div align="center">
+                          <span class="fas fa-glass-martini-alt fa-2x mt-2"></span>
+                    </div>
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+                <li class="nav-item" style="    background: #1b3647;">
+                        <div align="center">
+                              <span class="fas fa-dollar-sign fa-2x mt-2"></span>
+                        </div>
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+                <li class="nav-item dropdown" style="background: #152836;">
+                        <div align="center">
+                           <a class="fas fa-gift fa-2x mt-2 "></a>
+                        </div>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                           <a class="dropdown-item" href="#">Action</a>
+                           <a class="dropdown-item" href="#">Another action</a>
+                           <div class="dropdown-divider"></div>
+                           <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                     </li>
+            </ul>
+         </div>
+      </nav>
+      <!-- bigian slider -->
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+         <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+         </ol>
+         <div class="carousel-inner">
+            <div class="carousel-item active">
+               <img class="d-block w-100" src="slide-1.jpg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+               <img class="d-block w-100" src="slide-2.jpg" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+               <img class="d-block w-100" src="slide-3.jpg" alt="Third slide">
+            </div>
+         </div>
+         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="sr-only">Previous</span>
+         </a>
+         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+         <span class="sr-only">Next</span>
+         </a>
+      </div>
+      <!-- end slider -->
