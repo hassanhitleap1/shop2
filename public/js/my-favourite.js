@@ -49,9 +49,9 @@ var page = 1; //track user scroll as page number, right now page number is 1
         var content='';
         $.each(data, function( index, value ) {
             content+=
-                '            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 pb-2">\n' +
+                '            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 pb-2" id=' + value.product.id +'>\n' +
                 '               <div class="card">\n' +
-                '                  <button type="button" class="btn btn-primary btn-lg float-right button-save" >Save</button>\n' +
+            '                  <button type="button" item=' + value.product.id +' class="btn btn-primary btn-lg float-right button-save saved" >UnSaved</button>\n' +
             '                  <img class="card-img-top" src="' + value.product.image_path + '" alt="Card image cap">\n' +
                 '                  <div class="card-body">\n' +
             '                     <h4 class="float-right"><i class="fas fa-dollar-sign"></i>' + value.product.price + '</h4>\n' +

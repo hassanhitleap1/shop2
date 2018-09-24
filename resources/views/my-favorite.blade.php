@@ -5,9 +5,9 @@
 <div class="container">
                        <div class="row" id="products">
                         @foreach ($savedProducts as $savedProduct) 
- <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 pb-2">
+ <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 pb-2" id="{{$savedProduct->product->id}}">
                 <div class="card">
-                   <button type="button" class="btn btn-primary btn-lg float-right button-save" >Save</button>
+                      <button type="button"  item="{{$savedProduct->product->id}}" class="btn btn-primary btn-lg float-right button-save saved" >{{($savedProduct->product->isSaved != null)?'UnSave':'Saved'}}</button>
                    <img class="card-img-top" src="{{asset($savedProduct->product->image_path)}}" alt="Card image cap">
                    <div class="card-body">
                       <h4 class="float-right"><i class="fas fa-dollar-sign"></i>{{($savedProduct->product->price)}}</h4>
