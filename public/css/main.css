@@ -49,11 +49,19 @@ body{
   font-size: 55px;
   color: #166ba2;
 }
-
+.list-inline-item{
+    width: 19%;
+    text-align: center;
+    border-top-right-radius: 10pc;
+    height: 49px;
+}
 .list-inline-item.active{
     color: white !important;
     background: #166ba2;
     padding: 10px;
+}
+.list-inline-item.active a{
+    color: white !important;
 }
 .dawnlist>.list-inline-item{
     color:  #166ba2;
