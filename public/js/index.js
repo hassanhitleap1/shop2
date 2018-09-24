@@ -85,25 +85,22 @@
     function printProduct(data) {
         var content='';
         $.each(data, function( index, value ) {
-            content+='<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">\n'+
-                        '<div class="item">\n'+
-                            '<div class="product-extra-link">\n'+
-                                '<a href="'+value.link+'" class="quick-view various" data-fancybox-type="iframe"><i class="fa fa-eye fa-2x" aria-hidden="true"></i><span>Quick View</span></a>\n'+
-                                '<a item="'+value.id+'" class="box-hidden wishlist saved"><i class="'+((value.is_saved == null) ? 'fa fa-save fa-2x' : 'fa fa-trash fa-2x')+'" aria-hidden="true" style="' +((value.is_saved == null) ? 'color:black' : 'color:red')+';"></i><span>Save to favorite Product</span></a>\n'+
-                            '</div>\n'+
-                            '<div class="thumb-product">\n'+
-                                '<a href="'+value.link+'"><img src="'+value.image_path+'" alt="" /></a>\n'+
-                            '</div>\n'+
-                            '<div class="name-product">\n'+
-                                '<h3><a href="'+value.link+'">Click here to go product</a></h3>\n'+
-                            '</div>\n'+
-                            '<div class="box-cart">\n'+
-                                '<a href="'+value.link+'" class="cart">Buy product <i class="fa " aria-hidden="true"></i></a>\n'+
-                                '<ins class="price"><sup>$</sup>'+Math.floor(value.price)+'<sup>'+String(value.price.toFixed(2)).slice(String(value.price.toFixed(2)).indexOf('.')) +'</sup></ins>\n'+
-                            '</div>\n'+
-                            '<div class="customize various" > '+value.description+'</div>\n'+
-                        '</div>\n'+
-                    '</div>';
+            content+='            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 pb-2">\n' +
+            '               <div class="card">\n' +
+            '                  <button type="button" class="btn btn-primary btn-lg float-right button-save" >Save</button>\n' +
+            '                  <img class="card-img-top" src="'+value.image_path+'" alt="Card image cap">\n' +
+            '                  <div class="card-body">\n' +
+            '                     <h4 class="float-right"><i class="fas fa-dollar-sign"></i>'+value.price+'</h4>\n' +
+            '                     <h4 class="card-title">'+value.name+'</h4>\n' +
+            '                     <p class="card-text">'+value.description+'.</p>\n' +
+            '                  </div>\n' +
+            '                  <div class="card-footer">\n' +
+            '                     <i class="far fa-heart"></i> <small class="text-muted">love this </small>\n' +
+            '                     <a href="'+value.link+'" class="btn btn-primary btn-sm float-right " >Check out</a>\n' +
+            '                  </div>\n' +
+            '               </div>\n' +
+            '            </div>';
+                    
         });
         $("#products").append(content);
         
