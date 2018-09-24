@@ -70,11 +70,6 @@ body{
 
 .card:hover  .button-save{
     opacity: 1;
-    -webkit-transition: opacity 0.85s ease-in;
-    -moz-transition: opacity 0.85s ease-in;
-     -ms-transition: opacity 0.85s ease-in;
-      -o-transition: opacity 0.85s ease-in;
-         transition: opacity 0.85s ease-in;
 }
 .card-title{
     font-weight: bold;

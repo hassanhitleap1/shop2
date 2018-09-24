@@ -41,6 +41,6 @@ Route::resource('/admin/contact','ContactController');
 
 Route::get('/admin/contact/{id}/check', 'ContactController@check');
 
-Route::get('user/register','Auth\RegisterController@register');
+Route::get('user/register','Auth\RegisterController@registerView');
 
-Route::get('user/login','Auth\LoginController@login');
+Route::get('user/login','Auth\LoginController@loginView');

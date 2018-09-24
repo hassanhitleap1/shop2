@@ -22,7 +22,7 @@
         @include('sections.modal')
       <!-- js model -->
 
-      <div class="modal fade" id="test" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="model" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                <div class="modal-content">
            
@@ -42,11 +42,15 @@
          $(document).ready(function () {
             $("#loginClick").click(function (e) { 
                 e.preventDefault();
-         
-            $( ".modal-content" ).load( "user/login" , function() {
-                    $('#test').modal('show');   
+                $( ".modal-content" ).load( "user/login" , function() {
+                    $('#model').modal('show');   
                 });
-               //$('#loginModal').modal('show');
+            });
+            $("#registerClick").click(function (e) { 
+                e.preventDefault();
+                $( ".modal-content" ).load( "user/register" , function() {
+                    $('#model').modal('show');   
+                });
             });
             $(".button-save").click(function (e) { 
                 e.preventDefault();

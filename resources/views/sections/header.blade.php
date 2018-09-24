@@ -13,14 +13,15 @@
                          </div>
                       </div>
                       <div class="col-md-auto">
-                         <img src="logo-1.png" class="rounded mx-auto d-block" >
+                         <a href="{{url('/')}}"><img src="logo-1.png" class="rounded mx-auto d-block" ></a> 
                       </div>
                       <div class="col col-lg-5">
                          <ul class="list-inline  float-right">
                                  @guest
                                         <a id="loginClick"> <li class="list-inline-item auth-menu fas fa-sign-in-alt"></li>Login</a>
-                                        <a><li class="list-inline-item auth-menu fas fa-user-plus"></li>register</a>
-                                @else                  
+                                        <a id="registerClick"><li class="list-inline-item auth-menu fas fa-user-plus"></li>register</a>
+                                @else  
+                                <a href="{{url('/my-favorite')}}"><li class="list-inline-item auth-menu far fa-heart"></li>MY favorite</a>                
                                 <a  href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();"> {{ __('Logout') }}
                                                 <li class="list-inline-item fas fa-user-plus"></li>
                                         </a>

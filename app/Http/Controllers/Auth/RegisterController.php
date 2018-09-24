@@ -69,7 +69,7 @@ class RegisterController extends Controller
     }
 
 
-    public function register(){
+    public function registerView(){
         return view('models.register');
     }
 }
