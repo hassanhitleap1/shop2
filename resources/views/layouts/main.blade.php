@@ -3,7 +3,7 @@
    <head>
       <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>Page Title</title>
+      <title>{{config('app.name')}} @yield('title')</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
         @include('sections.head')
    </head>
@@ -37,9 +37,16 @@
             </div>
          </div>
          <!-- menu list -->
-         <div class="row">
-            @include('sections.content')
+         <div class="row" id="products">
+            @yield('content')
          </div>
+
+         <div class="more" id="more" category="{{!empty(@$_GET['category'])?$_GET['category']:''}}"   search="{{isset($_GET['search'])?$_GET['search']:''}}">
+            <a href="#"><i class="fa fa-long-arrow-down" aria-hidden="true"></i>More</a>
+            <div class="ajax-load text-center" style="display:none">
+                <p><img src="http://demo.itsolutionstuff.com/plugin/loader.gif">Loading More post</p>
+            </div>
+        </div>
       </div>
       <!-- end contenier -->
 
