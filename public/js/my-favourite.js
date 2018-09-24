@@ -48,25 +48,24 @@ var page = 1; //track user scroll as page number, right now page number is 1
     function printProduct(data) {
         var content='';
         $.each(data, function( index, value ) {
-            content+='<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"  id="'+value.product.id+'">\n'+
-                        '<div class="item">\n'+
-                            '<div class="product-extra-link">\n'+
-                                '<a href="'+value.product.link+'" class="quick-view various" data-fancybox-type="iframe"><i class="fa fa-eye fa-2x" aria-hidden="true"></i><span>Quick View</span></a>\n'+
-                                '<a item="'+value.product.id+'" class="box-hidden wishlist saved"><i class="fa fa-trash fa-2x" aria-hidden="true" style="color: red;"></i><span>Save to favorite Product</span></a>\n'+
-                            '</div>\n'+
-                            '<div class="thumb-product">\n'+
-                                '<a href="'+value.link+'"><img src="'+value.product.image_path+'" alt="" /></a>\n'+
-                            '</div>\n'+
-                            '<div class="name-product">\n'+
-                                '<h3><a href="'+value.product.link+'">Click here to go product</a></h3>\n'+
-                            '</div>\n'+
-                            '<div class="box-cart">\n'+
-                                '<a href="'+value.product.link+'" class="cart">Buy product <i class="fa " aria-hidden="true"></i></a>\n'+
-                                '<ins class="price"><sup>$</sup>'+Math.floor(value.product.price)+'<sup>'+String(value.product.price.toFixed(2)).slice(String(value.product.price.toFixed(2)).indexOf('.')) +'</sup></ins>\n'+
-                            '</div>\n'+
-                            '<div class="customize various" > '+value.product.description+'</div>\n'+
-                        '</div>\n'+
-                    '</div>';
+            content+=
+                '            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 pb-2">\n' +
+                '               <div class="card">\n' +
+                '                  <button type="button" class="btn btn-primary btn-lg float-right button-save" >Save</button>\n' +
+            '                  <img class="card-img-top" src="' + value.product.image_path + '" alt="Card image cap">\n' +
+                '                  <div class="card-body">\n' +
+            '                     <h4 class="float-right"><i class="fas fa-dollar-sign"></i>' + value.product.price + '</h4>\n' +
+            '                     <h4 class="card-title">' + value.product.name + '</h4>\n' +
+            '                     <p class="card-text">' + value.product.description + '.</p>\n' +
+                '                  </div>\n' +
+                '                  <div class="card-footer">\n' +
+                '                     <i class="far fa-heart"></i> <small class="text-muted">love this </small>\n' +
+            '                     <a href="' + value.product.link + '" class="btn btn-primary btn-sm float-right " >Check out</a>\n' +
+                '                  </div>\n' +
+                '               </div>\n' +
+                '            </div>';
+            
+     
         });
         $("#products").append(content);
         
