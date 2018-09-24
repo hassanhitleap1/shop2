@@ -51,7 +51,7 @@ var page = 1; //track user scroll as page number, right now page number is 1
             content+=
                 '            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 pb-2" id=' + value.product.id +'>\n' +
                 '               <div class="card">\n' +
-            '                  <button type="button" item=' + value.product.id +' class="btn btn-primary btn-lg float-right button-save saved" >UnSaved</button>\n' +
+            '                  <button type="button" item=' + value.product.id + ' class="btn btn-primary btn-lg float-right button-save saved" >' + ((value.product.is_saved == null) ? 'Saved' : 'UnSaved') +'</button>\n' +
             '                  <img class="card-img-top" src="' + value.product.image_path + '" alt="Card image cap">\n' +
                 '                  <div class="card-body">\n' +
             '                     <h4 class="float-right"><i class="fas fa-dollar-sign"></i>' + value.product.price + '</h4>\n' +
