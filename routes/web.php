@@ -40,3 +40,7 @@ Route::resource('/device','DeviceController');
 Route::resource('/admin/contact','ContactController');
 
 Route::get('/admin/contact/{id}/check', 'ContactController@check');
+
+Route::get('user/register','Auth\RegisterController@register');
+
+Route::get('user/login','Auth\LoginController@login');

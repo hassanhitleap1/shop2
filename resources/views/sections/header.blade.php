@@ -19,7 +19,7 @@
                        <li class="list-inline-item fas fa-sign-in-alt"></li>
                        Login
                     </a>
-                    <a>
+                    <a action="{{url('/user/register')}}" id="loadmodel" >
                        <li class="list-inline-item fas fa-user-plus"></li>
                        Regidter
                     </a>
