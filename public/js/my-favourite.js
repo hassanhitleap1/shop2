@@ -87,13 +87,15 @@ var page = 1; //track user scroll as page number, right now page number is 1
             }).done(function(data){
                 $('.ajax-load').hide(); //hide loading animation once data is received 
                 if(data.saved==1){
-                    alert('Add to favourite');  
+                    $('#addToFavirate').modal('show');  
                 
                 }else if(data.saved==2){
                     $( "#"+data.item ).remove();
-                    alert('trash from favourite'); 
+                    $('#trashFromFavirate').modal('show');
                 }else{
-                    alert('Must be login'); 
+                    $( ".modal-content" ).load( "user/login" , function() {
+                        $('#model').modal('show');   
+                    }); 
                 }
                 
             }).fail(function(jqXHR, ajaxOptions, thrownError){
