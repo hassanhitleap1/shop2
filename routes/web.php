@@ -28,10 +28,10 @@ Route::resource('/admin/slider','SliderController');
 
 Route::get('/admin/slider/{id}/delete-image','SliderController@deleteImage');
 Route::get('/admin/slider/{id}/publish', 'SliderController@publish');
-Route::get('/saved', 'HomeController@savedProduct')->name('savedProduct');
+Route::get('/saved', 'HomeController@savedProduct')->name('savedProduct')->middleware('auth');;
 Route::get('/admin','AdminController@index');
 
-Route::get('/my-favorite', 'HomeController@myFavorite');
+Route::get('/my-favorite', 'HomeController@myFavorite')->middleware('auth');;
 
 Route::get('/contact', 'HomeController@contact');
 Route::post('/saved-contact', 'HomeController@contactSaved');
