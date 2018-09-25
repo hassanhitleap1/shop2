@@ -52,10 +52,6 @@
                     $('#model').modal('show');   
                 });
             });
-            $(".button-save").click(function (e) { 
-                e.preventDefault();
-                $('#centralModalInfo').modal('show');
-            });
          });
       </script>
       <!-- end js model -->

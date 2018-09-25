@@ -27,18 +27,18 @@
             }).done(function(data){
                 $('.ajax-load').hide(); //hide loading animation once data is received 
                 if(data.saved==1){
-                    $(".saved[item='"+data.item+"']").css({"color": ""});
-                    $(".saved[item='"+data.item+"']").css({"color": "red"});
-                    $("a[item='"+data.item+"']>i").removeClass( "fa fa-save fa-2x" ).addClass( "fa fa-trash fa-2x" );
-                    alert('Add to favourite');  
+                    $(".saved[item='"+data.item+"']").removeClass( "btn-primary" ).addClass( "btn-danger" );
+                    $(".saved[item='"+data.item+"']").text('UnSaved');
+                    $('#addToFavirate').modal('show');   
                 
                 }else if(data.saved==2){
-                    $(".saved[item='"+data.item+"']").css({"color": ""});
-                    $(".saved[item='"+data.item+"']").css({"color": "black"});
-                    $("a[item='"+data.item+"']>i").removeClass( "fa fa-trash fa-2x" ).addClass( "fa fa-save fa-2x" );
-                    alert('trash from favourite'); 
+                    $(".saved[item='"+data.item+"']").removeClass( "btn-danger" ).addClass( "btn-primary" );
+                    $(".saved[item='"+data.item+"']").text('Saved');
+                    $('#trashFromFavirate').modal('show'); 
                 }else{
-                    alert('Must be login'); 
+                    $( ".modal-content" ).load( "user/login" , function() {
+                        $('#model').modal('show');   
+                    }); 
                 }
                 
             }).fail(function(jqXHR, ajaxOptions, thrownError){
