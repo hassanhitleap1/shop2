@@ -15,6 +15,10 @@
               <div class="col-xs-12 col-sm-4 col-md-4">
                  <h5>Category</h5>
                  <ul class="list-unstyled quick-links">
+                   <?php 
+                        use App\Category;
+
+                        $categories = Category::all();; ?>
                     @foreach ($categories as $category)
                     <li><a href="{{url('?category='. $category->name)}}"><i class="fa fa-angle-double-right"></i>{{$category->name}}</a></li>
                     @endforeach

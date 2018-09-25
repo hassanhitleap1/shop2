@@ -10,6 +10,10 @@
                  </div>
                  <a class="nav-link" style="color: black !important ;" href="{{url('')}}">Home <span class="sr-only">(current)</span></a>
               </li>
+              <?php 
+use App\Category;
+
+                $categories = Category::all();;?>
               @foreach ($categories as $category) 
                   @if ($counter>5) @break; @endif 
                    <li   {{++$counter}} class="nav-item" style="background: {{$category->color}};">
