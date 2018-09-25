@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-        @if(!isset(request()->category))
+        @if(!isset(request()->category) && !isset(request()->search) )
               <!-- bigian slider -->
       @include('sections.slider')
       <!-- end slider -->
