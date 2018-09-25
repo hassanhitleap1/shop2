@@ -19,9 +19,9 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('index',function ($view) use ($categories){
             $view->with('categories', $categories);
         });
-        // view()->composer('/sections',function ($view) use ($categories){
-        //     $view->with('categories', $categories);
-        // });
+        view()->composer('sections.nav',function ($view) use ($categories){
+            $view->with('categories', $categories);
+        });
     }
 
     /**
