@@ -22,7 +22,7 @@
             <tr>
                <th scope="row">{{++$i}}</th>
                <td>{{$product->name}}</td>
-               <td>{{$product->description}}</td>
+               <td><p class="description">{{$product->description}}</p></td>
                <td>{{$product->link}}</td>
                <td><img src="{{asset($product->image_path)}}" class="rounded" style="width: 180px;"> 
                </td>
