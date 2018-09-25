@@ -16,9 +16,12 @@ $count=$imagesSlider->count();
                         <img class="d-block w-100" src="slide-1.jpg" alt="First slide">
                 </div>
                 @foreach($imagesSlider as $image)
-                        <div class="carousel-item">
-                                <img class="d-block w-100" src="{{$image->image_path}}" alt="Second slide">
-                        </div>
+             
+                                <a class="carousel-item" href="{{$image->link}}">
+                                                <img class="d-block w-100" src="{{$image->image_path}}" alt="Second slide">
+                                </a>
+                
+   
                 @endforeach
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
