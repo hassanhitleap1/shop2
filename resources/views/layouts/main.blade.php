@@ -5,31 +5,26 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <title>{{config('app.name')}} @yield('title')</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-        @include('sections.head')
+      @include('sections.head')
    </head>
    <body>
-        {{-- head --}}
-        @include('sections.header')
+      {{-- head --}}
+      @include('sections.header')
       {{-- navbar start --}}
       @include('sections.nav')
       {{-- end navbar --}}
-
       @yield('content')
-
       <!-- footer start  -->
       @include('sections.footer')
       <!-- footer end -->
-        @include('sections.modal')
+      @include('sections.modal')
       <!-- js model -->
-
       <div class="modal fade" id="model" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-               <div class="modal-content">
-           
-               </div>
+         <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
             </div>
          </div>
-
+      </div>
       <script>
          $(document).scroll(function(e){
                var scrollTop = $(document).scrollTop();
@@ -56,7 +51,7 @@
       </script>
       <!-- end js model -->
       <!-- begin js -->
-        @include('sections.js')
+      @include('sections.js')
       <!-- end js -->
    </body>
 </html>
