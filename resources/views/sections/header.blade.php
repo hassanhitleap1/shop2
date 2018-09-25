@@ -31,6 +31,12 @@
                                <li class="list-inline-item auth-menu far fa-heart"></li>
                                MY favorite
                             </a>
+                            @if(Auth::user()->admin)
+                            <a href="{{url('/admin')}}">
+                                <li class="list-inline-item auth-menu fas fa-screwdriver"></li>
+                                admin
+                             </a>
+                            @endif
                             <a href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">
                                <li class="list-inline-item auth-menu fas fa-sign-out-alt"></li>
                                logout
