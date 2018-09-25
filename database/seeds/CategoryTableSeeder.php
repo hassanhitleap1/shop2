@@ -28,7 +28,7 @@ class CategoryTableSeeder extends Seeder
         ],[
             'name' => 'Gifts Under $20',
             'classes' => 'fas fa-dollar-sign',
-            'color'=>'#d06503',
+            'color'=>'#166ba2',
         ],[
             'name' => 'Giveaways',
             'classes' => 'fas fa-gift',
