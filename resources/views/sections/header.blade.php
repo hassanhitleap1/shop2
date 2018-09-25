@@ -4,13 +4,15 @@
                 <div class="mt-3 border-bottom">
                    <div class="row justify-content-md-center">
                       <div class="col col-lg-5">
+                                <form  action="{{url('/')}}" method="GET">
                          <div class="input-group mb-1 float-left col-4">
                             <input type="text" class="form-control" placeholder="search" aria-label="Recipient's username"
-                               aria-describedby="basic-addon2">
+                               aria-describedby="basic-addon2" name="search">
                             <div class="input-group-append">
                                <span class="input-group-text" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i> </span>
                             </div>
                          </div>
+                                </form>
                       </div>
                       <div class="col-md-auto">
                          <a href="{{url('/')}}"><img src="logo-1.png" class="rounded mx-auto d-block" ></a> 

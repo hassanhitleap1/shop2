@@ -21,13 +21,15 @@
                </ul>
             </div>
             <div class="col-md-6">
+                    <form  action="{{url('/')}}" method="GET">
                <div class="input-group  mt-2 ">
                   <input type="text" class="form-control" placeholder="search" aria-label="Recipient's username"
-                     aria-describedby="basic-addon2">
+                     aria-describedby="basic-addon2" name="search">
                   <div class="input-group-append">
                      <span class="input-group-text" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i> </span>
                   </div>
                </div>
+                    </form>
             </div>
          </div>
          <!-- menu list -->
