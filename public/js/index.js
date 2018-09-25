@@ -28,11 +28,13 @@
                 $('.ajax-load').hide(); //hide loading animation once data is received 
                 if(data.saved==1){
                     $(".saved[item='"+data.item+"']").removeClass( "btn-primary" ).addClass( "btn-danger" );
+                    $(".saved[item='"+data.item+"']>span").removeClass( "far fa-save" ).addClass( "fas fa-trash-alt" );
                     $(".saved[item='"+data.item+"']").text('UnSaved');
                     $('#addToFavirate').modal('show');   
                 
                 }else if(data.saved==2){
                     $(".saved[item='"+data.item+"']").removeClass( "btn-danger" ).addClass( "btn-primary" );
+                    $(".saved[item='"+data.item+"']>span").removeClass( "fas fa-trash-alt" ).addClass( "far fa-save" );
                     $(".saved[item='"+data.item+"']").text('Saved');
                     $('#trashFromFavirate').modal('show'); 
                 }else{
@@ -84,10 +86,12 @@
     // print products when load more 
     function printProduct(data) {
         var content='';
+        var buttonSave='';
         $.each(data, function( index, value ) {
+            buttonSave =(value.is_saved == null)?'<button type="button"  item="'+value.id+'" class="btn  btn-primary  float-right button-save saved" > <span class="far fa-save fa-btn-save"></span>Saved</button>':'<button type="button"  item="'+value.id+'" class="btn btn-danger  float-right button-save saved" > <span class="fas fa-trash-alt fa-btn-save"></span>UnSaved</button>';
             content += '            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 pb-2" id="' + value.id + '">\n' +
             '               <div class="card">\n' +
-                '                  <button type="button"  item="' + value.id + '" class="btn '+ ((value.is_saved == null) ? 'btn-primary' : 'btn-danger')+' btn-lg float-right button-save saved" >' + ((value.is_saved == null) ? 'Saved' : 'UnSaved') +'</button>\n' +
+            buttonSave+
             '                  <img class="card-img-top" src="'+value.image_path+'" alt="Card image cap">\n' +
             '                  <div class="card-body">\n' +
             '                     <h4 class="float-right"><i class="fas fa-dollar-sign"></i>'+value.price+'</h4>\n' +

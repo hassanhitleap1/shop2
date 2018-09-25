@@ -7,7 +7,7 @@
                         @foreach ($savedProducts as $savedProduct) 
  <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 pb-2" id="{{$savedProduct->product->id}}">
                 <div class="card">
-                      <button type="button"  item="{{$savedProduct->product->id}}" class="btn {{($savedProduct->product->isSaved == null)?'btn-primary':'btn-danger'}} btn-lg float-right button-save saved" >{{($savedProduct->product->isSaved != null)?'UnSave':'Saved'}}</button>
+                        <button type="button"  item="{{$savedProduct->product->id}}" class="btn btn-danger  float-right button-save saved" > <span class="fas fa-trash-alt fa-btn-save"></span>UnSaved</button>
                    <img class="card-img-top" src="{{asset($savedProduct->product->image_path)}}" alt="Card image cap">
                    <div class="card-body">
                       <h4 class="float-right"><i class="fas fa-dollar-sign"></i>{{($savedProduct->product->price)}}</h4>
