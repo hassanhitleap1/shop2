@@ -50,10 +50,10 @@ body{
   color: #166ba2;
 }
 .list-inline-item{
-    width: 19%;
+    width: 20%;
     text-align: center;
-    border-top-right-radius: 10pc;
-    height: 49px;
+    border-top-right-radius: 1pc;
+    height: 60px;
 }
 .list-inline-item.active{
     color: white !important;
@@ -185,3 +185,7 @@ section .section-title {
 .list-inline.float-right > a{
     text-decoration: none;
 }
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+  }

@@ -15,7 +15,7 @@
             @if ($counter==3) @break; @endif 
                 <li  {{++$counter}} class="list-inline-item {{(request()->category==  $category->name)?'active':''}}"><a href="{{url('?category='. $category->name)}}">{{$category->name}}</a></li>
             @endforeach
-            <li class="list-inline-item"><a href="{{url('/')}}">load more</a></li>
+            <li class="list-inline-item"><a href="{{url('/')}}"> more</a></li>
          </ul>
       </div>
       <div class="col-md-6">
