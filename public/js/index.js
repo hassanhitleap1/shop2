@@ -57,6 +57,8 @@
 
     // load more products
     function load_more(page){
+       var category= $('#more').attr('category');
+      var   search= $('#more').attr('search');
         $.ajax({
                 url: '?page=' + page,
                 type: "get",

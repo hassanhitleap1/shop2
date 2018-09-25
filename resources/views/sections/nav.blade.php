@@ -48,6 +48,7 @@
                        More Category
                        </a>
                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <?php $categories=\App\Category::all();?>
                               @foreach ($categories as $category) 
                               <a class="dropdown-item" href="{{url('/?category='.$category->name)}}">{{$category->name}}</a> 
                                @endforeach
