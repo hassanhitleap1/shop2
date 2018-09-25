@@ -3,3 +3,6 @@
     word-wrap: break-word;
     width: 251px;
 }
+input[name='color'] { 
+    height: 38px;;
+}
