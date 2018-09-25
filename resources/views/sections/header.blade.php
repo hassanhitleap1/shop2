@@ -21,13 +21,12 @@
                                         <a id="loginClick"> <li class="list-inline-item auth-menu fas fa-sign-in-alt"></li>Login</a>
                                         <a id="registerClick"><li class="list-inline-item auth-menu fas fa-user-plus"></li>register</a>
                                 @else  
-                                <a href="{{url('/my-favorite')}}"><li class="list-inline-item auth-menu far fa-heart"></li>MY favorite</a>                
-                                <a  href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();"> {{ __('Logout') }}
-                                                <li class="list-inline-item fas fa-user-plus"></li>
-                                        </a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                   @csrf
-                                                </form>
+                                <a href="{{url('/my-favorite')}}"><li class="list-inline-item auth-menu far fa-heart"></li>MY favorite</a>
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();"> <li class="list-inline-item auth-menu fas fa-sign-out-alt"></li>logout</a> 
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                             </form>               
+      
                             
                                  @endguest
                          </ul>

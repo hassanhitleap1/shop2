@@ -65,8 +65,11 @@ body{
 }
 .dawnlist>.list-inline-item{
     color:  #166ba2;
+   
 }
-
+.dawnlist>.list-inline-item > a{
+    text-decoration: none;
+}
 
 .button-save{
     position: absolute;
@@ -173,4 +176,8 @@ section .section-title {
 
 .fa-btn-save{
     margin-right: 7px;
+}
+
+.list-inline.float-right > a{
+    color: #007bff !important;
 }

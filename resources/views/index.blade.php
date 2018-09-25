@@ -1,17 +1,21 @@
 @extends('layouts.main')
 
 @section('content')
-      <!-- bigian slider -->
+        @if(!isset(request()->category))
+              <!-- bigian slider -->
       @include('sections.slider')
       <!-- end slider -->
+        @endif
+
       <div class="container">
          <!-- menu list -->
          <div class="row pb-2 mt-4 mb-2">
             <div class="col-md-6">
                <ul class="list-inline dawnlist">
                     <?php $categories=\App\Category::all();?>
+                        <li class="list-inline-item {{ !isset(request()->category)?'active':''}}"><a href="{{url('/')}}">Home</a></li>
                     @foreach ($categories as $category)  
-                        <li class="list-inline-item active"><a href="{{url('?category='. $category->name)}}">{{$category->name}}</a></li>
+                        <li class="list-inline-item {{(request()->category==  $category->name)?'active':''}}"><a href="{{url('?category='. $category->name)}}">{{$category->name}}</a></li>
                     @endforeach
                  
                </ul>
