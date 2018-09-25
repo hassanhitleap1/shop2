@@ -4,19 +4,17 @@
    ?>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       @for ($i = 0; $i < $count; $i++)
-      <li data-target="#carouselExampleIndicators" data-slide-to="{{$i}}" ></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="{{$i}}" class="{{(!$i)?'active':''}}"></li>
       @endfor  
    </ol>
    <div class="carousel-inner">
-      <div class="carousel-item active">
-         <img class="d-block w-100" src="slide-1.jpg" alt="First slide">
-      </div>
+      <?php $i=0?>
       @foreach($imagesSlider as $image)
-      <a class="carousel-item" href="{{$image->link}}">
+      <a class="carousel-item {{(!$i)?'active':''}}" href="{{$image->link}}">
       <img class="d-block w-100" src="{{$image->image_path}}" alt="Second slide">
       </a>
+      <?php $i++?>
       @endforeach
    </div>
    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
