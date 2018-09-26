@@ -50,7 +50,7 @@ class HomeController extends Controller
                         ->orwhere('description', 'like', '%' . trim($search) . '%');
                 }); 
             }
-            $products= $products->orderBy('id', 'desc')->with('isSaved')->paginate(10);
+            $products= $products->orderBy('id', 'desc')->with('isSaved')->withCount('loves')->paginate(10);
             return response()->json(['products' => $products]);
         }
 
@@ -69,7 +69,7 @@ class HomeController extends Controller
                     ->orwhere('description', 'like', '%' . trim($search) . '%');
             });
         }
-        $products =$products->orderBy('id', 'desc')->with('isSaved')->paginate(10);
+        $products =$products->orderBy('id', 'desc')->with('isSaved')->withCount('loves')->paginate(10);
         return view('index')->with('products',$products)
                     ->with('imagesSlider',$imagesSlider);
 

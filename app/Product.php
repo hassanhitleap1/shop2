@@ -23,7 +23,7 @@ class Product extends Model
 
     }
     public function loves(){
-        return $this->hasMany(SavedProduct::class, 'product_id', 'id')->count();
+        return $this->hasMany(SavedProduct::class, 'product_id', 'id');
     }
 }
 

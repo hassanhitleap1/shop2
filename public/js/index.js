@@ -101,7 +101,7 @@
             '                     <p class="card-text">'+value.description+'.</p>\n' +
             '                  </div>\n' +
             '                  <div class="card-footer">\n' +
-            '                     <i class="far fa-heart"></i> <small class="text-muted">love this </small>\n' +
+            '                     <i class="far fa-heart"></i> <small class="text-muted">'+value.loves_count+' love this </small>\n' +
             '                     <a href="'+value.link+'" class="btn btn-primary btn-sm float-right " >Check out</a>\n' +
             '                  </div>\n' +
             '               </div>\n' +
