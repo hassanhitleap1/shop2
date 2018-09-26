@@ -139,7 +139,9 @@ class HomeController extends Controller
 
     public function myFavorite(Request $request){
         $savedProducts = SavedProduct::where('user_id', Auth::user()->id)
-        ->with('product')->orderBy('created_at', 'desc')->paginate(10);
+        ->with('product')->with(['product' => function($query){
+            $query->withCount('loves');
+            }])->orderBy('created_at', 'desc')->paginate(10);
 
         if ($request->ajax()) {
             return response()->json(['savedProducts' => $savedProducts]);
