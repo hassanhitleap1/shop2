@@ -44,3 +44,5 @@ Route::get('/admin/contact/{id}/check', 'ContactController@check');
 Route::get('user/register','Auth\RegisterController@registerView');
 
 Route::get('user/login','Auth\LoginController@loginView');
+
+Route::get('/populer','HomeController@mostPopuler')->name('populer');

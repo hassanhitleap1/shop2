@@ -11,6 +11,7 @@ use Validator;
 use Session;
 use App\Contact;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class HomeController extends Controller
@@ -148,5 +149,18 @@ class HomeController extends Controller
         }
 
         return view('my-favorite')->with('savedProducts', $savedProducts);
+    }
+
+    public function mostPopuler(){
+       // SELECT COUNT(product_id) ,product_id FROM saved_products GROUP BY product_id ORDER BY COUNT(product_id) DESC
+       $modelMostPopuler= DB::table('saved_products')
+                    ->select( DB::raw('count(product_id) as count_product , product_id'))
+                    ->groupBy('product_id')
+                    ->orderBy('count_product','DESC')->get();
+
+        $arrayIdProducts=(array_column($modelMostPopuler->toArray(), 'product_id'));
+        $products= Product::whereIn('id', $arrayIdProducts)->get();
+        var_dump($products); 
+        exit;
     }
 }
