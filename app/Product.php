@@ -9,6 +9,8 @@ class Product extends Model
 {
     const IN_HOME=1;
     const OUT_HOME=0;
+    const Recommended=1;
+    const UnRecommended=0;
 
     public function infoCategory(){
         return $this->hasOne(Category::class, 'id','category');

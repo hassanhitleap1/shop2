@@ -13,6 +13,7 @@
                <th scope="col">Image</th>
                <th scope="col">Category</th>
                <th scope="col">At Home</th>
+               <th scope="col">Recommended</th>
                <th scope="col">Action</th>
             </tr>
          </thead>
@@ -28,6 +29,7 @@
                </td>
                <td>{{$product->infoCategory['name']}}</td>
                <td>{{($product->at_home)?'yes':'no'}}</td>
+               <td>{{($product->recommended)?'yes':'no'}}</td>
                <td>
                   <a href="{{url('/admin/products/'.$product->id.'/edit')}}"><i class="fas fa-edit"></i></a>
                   <a href="{{url('/admin/products/'.$product->id)}}"><i class="fas fa-eye"></i></a>

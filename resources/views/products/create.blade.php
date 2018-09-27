@@ -81,6 +81,21 @@
                         @endif
                      </div>
                   </div>
+                <div class="form-group row">
+                     <label for="recommended" class="col-sm-4 col-form-label text-md-right">Recommended</label>
+                     <div class="col-md-6">
+                        <select id="recommended"  class="form-control{{ $errors->has('recommended') ? ' is-invalid' : '' }}" name="category">
+                           
+                           <option value="{{\App\Product::UnRecommended}}">UnRecommended</option>
+                            <option value="{{\App\Product::Recommended}}">Recommended</option>
+                        </select>
+                        @if ($errors->has('recommended'))
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('recommended') }}</strong>
+                        </span>
+                        @endif
+                     </div>
+                  </div>
                   <div class="form-group row mb-0">
                      <div class="col-md-8 offset-md-4">
                         <button type="submit" class="btn btn-primary">

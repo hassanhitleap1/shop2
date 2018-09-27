@@ -73,6 +73,7 @@ class ProductController extends BaseController
          $product->image_path='image/prodcut-image/'.$name;
         $product->at_home= ($request->get('at_home'))? 1:0;
         $product->price=$request->get('price');
+        $product->recommended = $request->get('recommended');
          $product->save();
         return redirect('/admin/products');
     }
@@ -146,6 +147,7 @@ class ProductController extends BaseController
         $product->category = $request->get('category');
         $product->at_home=($request->get('at_home')) ? 1 : 0;
         $product->price=$request->get('price');
+        $product->recommended = $request->get('recommended');
          $product->save();
         return redirect('/admin/products');
     }
