@@ -106,8 +106,8 @@
                      <label for="recommended" class="col-sm-4 col-form-label text-md-right">Recommended</label>
                      <div class="col-md-6">
                         <select id="recommended"  class="form-control{{ $errors->has('recommended') ? ' is-invalid' : '' }}" name="recommended">
-                           <option value="{{\App\Product::UnRecommended}}" "{{$product->recommended? 'selected':''}}" >UnRecommended</option>
-                            <option value="{{\App\Product::Recommended}}" "{{$product->recommended? 'selected':''}}">Recommended</option>
+                           <option value="{{\App\Product::Recommended}}" {{($product->recommended)? 'selected':''}} >Recommended</option>
+                            <option value="{{\App\Product::UnRecommended}}" {{($product->recommended==\App\Product::UnRecommended)? 'selected':''}}>UnRecommended</option>
                         </select>
                         @if ($errors->has('recommended'))
                         <span class="invalid-feedback" role="alert">
