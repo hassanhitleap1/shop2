@@ -11,8 +11,8 @@
       <div class="col-md-6">
          <ul class="list-inline dawnlist">
             <li class="list-inline-item active animate" ><a href="{{url('/')}}">Home</a></li>
-            <li class="list-inline-item active animate"><a href="{{url('/')}}">Popular</a></li>
-            <li class="list-inline-item active animate"><a href="{{url('/')}}">Recommended</a></li>
+            <li class="list-inline-item active animate"><a href="{{url('/popular')}}">Popular</a></li>
+            <li class="list-inline-item active animate"><a href="{{url('/recommended')}}">Recommended</a></li>
          </ul>
       </div>
       <div class="col-md-6">

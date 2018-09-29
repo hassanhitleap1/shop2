@@ -45,4 +45,6 @@ Route::get('user/register','Auth\RegisterController@registerView');
 
 Route::get('user/login','Auth\LoginController@loginView');
 
-Route::get('/populer','HomeController@mostPopuler')->name('populer');
+Route::get('/popular','HomeController@mostPopuler')->name('populer');
+
+Route::get('/recommended', 'HomeController@recommended')->name('recommended');

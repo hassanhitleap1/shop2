@@ -151,16 +151,51 @@ class HomeController extends Controller
         return view('my-favorite')->with('savedProducts', $savedProducts);
     }
 
+    /**
+     * most puupler 
+     */
     public function mostPopuler(){
-       // SELECT COUNT(product_id) ,product_id FROM saved_products GROUP BY product_id ORDER BY COUNT(product_id) DESC
-       $modelMostPopuler= DB::table('saved_products')
-                    ->select( DB::raw('count(product_id) as count_product , product_id'))
-                    ->groupBy('product_id')
-                    ->orderBy('count_product','DESC')->get();
+        if (request()->ajax()) {
+             // SELECT COUNT(product_id) ,product_id FROM saved_products GROUP BY product_id ORDER BY COUNT(product_id) DESC
+            $modelMostPopuler = DB::table('saved_products')
+                ->select(DB::raw('count(product_id) as count_product , product_id'))
+                ->groupBy('product_id')
+                ->orderBy('count_product', 'DESC')->get();
 
-        $arrayIdProducts=(array_column($modelMostPopuler->toArray(), 'product_id'));
-        $products= Product::whereIn('id', $arrayIdProducts)->get();
-        var_dump($products); 
-        exit;
+            $arrayIdProducts = (array_column($modelMostPopuler->toArray(), 'product_id'));
+            $products = Product::whereIn('id', $arrayIdProducts);
+            if (request()->search != '') {
+                $search = $request->search;
+                $products->where(function ($products) use ($search) {
+                    $products->orwhere('name', 'like', '%' . trim($search) . '%')
+                        ->orwhere('description', 'like', '%' . trim($search) . '%');
+                });
+            }
+            $products = $products->orderBy('id', 'desc')->with('isSaved')->withCount('loves')->paginate(10);
+            return response()->json(['products' => $products]);
+
+        }
+        return view('popular');
+    }
+
+
+    /**
+     * recomaneded
+     */
+    public function recommended(){
+        if(request()->ajax()){
+            $products = Product::where('recommended', Product::Recommended);
+            if (request()->search != '') {
+                $search = $request->search;
+                $products->where(function ($products) use ($search) {
+                    $products->orwhere('name', 'like', '%' . trim($search) . '%')
+                        ->orwhere('description', 'like', '%' . trim($search) . '%');
+                });
+            }
+            $products = $products->orderBy('id', 'desc')->with('isSaved')->withCount('loves')->paginate(10);
+            return response()->json(['products' => $products]);
+            
+        }
+        return view('recommended');
     }
 }
