@@ -3,7 +3,7 @@
                    <div class="row justify-content-md-center">
                       <div class="col col-lg-5">
                          <form  action="{{url('/')}}" method="GET">
-                            <div class="input-group mb-1 float-left col-4">
+                            <div class="input-group mb-1 float-left col-6">
                                <input type="text" class="form-control" placeholder="search" aria-label="Recipient's username"
                                   aria-describedby="basic-addon2" name="search">
                                <div class="input-group-append">
