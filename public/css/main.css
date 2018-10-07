@@ -209,3 +209,6 @@ section .section-title {
   .card-img-top{
           height: 325px;
   }
+  .card-title{
+    font-size: medium;
+  }
