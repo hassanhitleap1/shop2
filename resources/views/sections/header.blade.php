@@ -1,7 +1,7 @@
 <div class="container">
                 <div class="mt-3 border-bottom">
                    <div class="row justify-content-md-center">
-                      <div class="col col-lg-5">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
                          <form  action="{{url('/')}}" method="GET">
                             <div class="input-group mb-1 float-left col-6">
                                <input type="text" class="form-control" placeholder="search" aria-label="Recipient's username"
@@ -12,10 +12,10 @@
                             </div>
                          </form>
                       </div>
-                      <div class="col-md-auto">
+                      <div class="col-md-2 col-lg-2  col-sm-2">
                          <a href="{{url('/')}}"><img src="logo-1.png" class="rounded mx-auto d-block" ></a> 
                       </div>
-                      <div class="col col-lg-5">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
                          <ul class="list-inline  float-right">
                             @guest
                             <a id="loginClick">

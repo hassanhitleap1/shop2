@@ -50,9 +50,10 @@ body{
   color: #166ba2;
 }
 .list-inline-item{
-    width: 31%;
+    width: 25%;
     text-align: center;
     height: 49px;
+    font-size: 100%;
 }
 .list-inline-item.active{
     color: white !important;
@@ -161,6 +162,22 @@ section .section-title {
         border-left: transparent;
         padding-bottom: 0px;
         margin-bottom: 10px;
+    }
+        input[name="search"]{
+        margin-left: -15px;
+    }
+
+
+}
+
+@media (max-width:575px){
+
+    .list-inline.float-right{
+        float: none !important;
+        text-align: center;
+    }
+    .input-group.mb-1.float-left.col-6{
+        max-width:none;
     }
 }
 
