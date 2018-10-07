@@ -14,7 +14,7 @@
             </div>
             <div class="card-footer">
                <i class="far fa-heart"></i> <small class="text-muted">{{$savedProduct->product->loves_count}}  love this</small>
-               <a href="{{$savedProduct->product->link}}" class="btn btn-primary btn-sm float-right " >Check out</a>
+               <a href="{{$savedProduct->product->link}}" class="btn btn-primary btn-sm float-right " target="_blank" >Check out</a>
             </div>
          </div>
       </div>

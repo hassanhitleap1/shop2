@@ -11,7 +11,7 @@
    <div class="carousel-inner">
       <?php $i=0?>
       @foreach($imagesSlider as $image)
-      <a class="carousel-item {{(!$i)?'active':''}}" href="{{$image->link}}">
+      <a class="carousel-item {{(!$i)?'active':''}}" href="{{$image->link}}" target="_blank">
       <img class="d-block w-100" src="{{$image->image_path}}" alt="Second slide">
       </a>
       <?php $i++?>

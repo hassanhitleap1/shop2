@@ -94,7 +94,7 @@
             content += '            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 pb-2" id="' + value.id + '">\n' +
             '               <div class="card">\n' +
             buttonSave+
-            '                  <img class="card-img-top" src="'+value.image_path+'" alt="Card image cap">\n' +
+            '                  <img class="card-img-top" src="'+value.image_path+'" alt="Card image cap" target="_blank">\n' +
             '                  <div class="card-body">\n' +
             '                     <h4 class="float-right"><i class="fas fa-dollar-sign"></i>'+value.price+'</h4>\n' +
             '                     <h4 class="card-title">'+value.name+'</h4>\n' +
