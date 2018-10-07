@@ -97,7 +97,7 @@ function printProduct(data) {
             '                  <div class="card-body">\n' +
             '                     <h4 class="float-right"><i class="fas fa-dollar-sign"></i>' + value.price + '</h4>\n' +
             '                     <h4 class="card-title">' + value.name + '</h4>\n' +
-            '                     <p class="card-text">' + value.description + '.</p>\n' +
+            '                     <p class="card-text">' + value.description.substring(0, 100) + '.</p>\n' +
             '                  </div>\n' +
             '                  <div class="card-footer">\n' +
             '                     <i class="far fa-heart"></i> <small class="text-muted">' + value.loves_count + ' love this </small>\n' +
