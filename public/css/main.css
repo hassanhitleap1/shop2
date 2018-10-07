@@ -1,5 +1,5 @@
 body{
-    font-family: Comic Sans MS;
+    font-family: inherit;
     font-weight: bold;
 }
 .navbar{
@@ -211,4 +211,7 @@ section .section-title {
   }
   .card-title{
     font-size: medium;
+  }
+  .card-text{
+          font-size: small;
   }
