@@ -205,3 +205,7 @@ section .section-title {
 .dropdown:hover>.dropdown-menu {
     display: block;
   }
+
+  .card-img-top{
+          height: 325px;
+  }
