@@ -37,11 +37,11 @@
             @else
             <button type="button"  item="{{$product->id}}" class="btn btn-danger  float-right button-save saved" > <span class="fas fa-trash-alt fa-btn-save"></span>UnSaved</button>
             @endif
-            <img class="card-img-top" src="{{asset($product->image_path)}}" alt="Card image cap">    
+            <a href="{{$product->link}}" target="_blank"><img class="card-img-top" src="{{asset($product->image_path)}}" alt="Card image cap"> </a> 
             <div class="card-body">
                <h4 class="float-right"><i class="fas fa-dollar-sign"></i>{{($product->price)}}</h4>
                <h4 class="card-title">{{$product->name}}</h4>
-               <p class="card-text">{{ substr($product->description,0,400)}}</p>
+               <p class="card-text">{{ substr($product->description,0,100)}}</p>
             </div>
             <div class="card-footer">
                <i class="far fa-heart"></i> <small class="text-muted">{{ $product->loves_count}} love this </small>
