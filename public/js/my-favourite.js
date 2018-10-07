@@ -52,7 +52,7 @@ var page = 1; //track user scroll as page number, right now page number is 1
                 '            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 pb-2" id=' + value.product.id +'>\n' +
                 '               <div class="card">\n' +
             '                   <button type="button"  item="' + value.product.id +'" class="btn btn-danger  float-right button-save saved" > <span class="fas fa-trash-alt fa-btn-save"></span>UnSaved</button>\n' +
-            '                  <img class="card-img-top" src="' + value.product.image_path + '" alt="Card image cap" target="_blank">\n' +
+            '                  <img class="card-img-top" src="' + value.product.image_path + '" alt="Card image cap" >\n' +
                 '                  <div class="card-body">\n' +
             '                     <h4 class="float-right"><i class="fas fa-dollar-sign"></i>' + value.product.price + '</h4>\n' +
             '                     <h4 class="card-title">' + value.product.name + '</h4>\n' +
@@ -60,7 +60,7 @@ var page = 1; //track user scroll as page number, right now page number is 1
                 '                  </div>\n' +
                 '                  <div class="card-footer">\n' +
                 '                     <i class="far fa-heart"></i> <small class="text-muted">'+ value.product.loves_count +' love this </small>\n' +
-            '                     <a href="' + value.product.link + '" class="btn btn-primary btn-sm float-right " >Check out</a>\n' +
+            '                     <a href="' + value.product.link + '" class="btn btn-primary btn-sm float-right " target="_blank" >Check out</a>\n' +
                 '                  </div>\n' +
                 '               </div>\n' +
                 '            </div>';

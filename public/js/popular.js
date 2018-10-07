@@ -93,7 +93,7 @@ function printProduct(data) {
         content += '            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 pb-2" id="' + value.id + '">\n' +
             '               <div class="card">\n' +
             buttonSave +
-            '                  <img class="card-img-top" src="' + value.image_path + '" alt="Card image cap" target="_blank">\n' +
+            '                  <img class="card-img-top" src="' + value.image_path + '" alt="Card image cap" >\n' +
             '                  <div class="card-body">\n' +
             '                     <h4 class="float-right"><i class="fas fa-dollar-sign"></i>' + value.price + '</h4>\n' +
             '                     <h4 class="card-title">' + value.name + '</h4>\n' +
@@ -101,7 +101,7 @@ function printProduct(data) {
             '                  </div>\n' +
             '                  <div class="card-footer">\n' +
             '                     <i class="far fa-heart"></i> <small class="text-muted">' + value.loves_count + ' love this </small>\n' +
-            '                     <a href="' + value.link + '" class="btn btn-primary btn-sm float-right " >Check out</a>\n' +
+            '                     <a href="' + value.link + '" class="btn btn-primary btn-sm float-right " target="_blank">Check out</a>\n' +
             '                  </div>\n' +
             '               </div>\n' +
             '            </div>';
