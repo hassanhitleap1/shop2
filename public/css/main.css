@@ -215,3 +215,10 @@ section .section-title {
   .card-text{
           font-size: small;
   }
+
+  .fa-dollar-sign{
+      padding-right: 1px;
+  }
+  .card-body >.float-right{
+      color: #5eb10c;
+  }
