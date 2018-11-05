@@ -10,9 +10,9 @@
    <div class="row pb-2 mt-4 mb-2">
       <div class="col-md-6 col-xl-6 col-lg-6 col-sm-12 col-xs-12">
          <ul class="list-inline dawnlist">
-            <li class="list-inline-item active animate" ><a href="{{url('/')}}">Home</a></li>
-            <li class="list-inline-item active animate"><a href="{{url('/popular')}}">Popular</a></li>
-            <li class="list-inline-item active animate"><a href="{{url('/recommended')}}">Recommended</a></li>
+            <li class="list-inline-item active " ><a href="{{url('/')}}">Home</a></li>
+            <li class="list-inline-item active "><a href="{{url('/popular')}}">Popular</a></li>
+            <li class="list-inline-item active "><a href="{{url('/recommended')}}">Recommended</a></li>
          </ul>
       </div>
       <div class="col-md-6 col-xl-6 col-lg-6 col-sm-12 col-xs-12">

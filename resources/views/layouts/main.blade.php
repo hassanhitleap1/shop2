@@ -48,16 +48,7 @@
                     $('#model').modal('show');   
                 });
             });
-            $('.animate').hover(function() {
-                    element = $(this);
-                $(element).addClass('animated bounce');
-                        window.setTimeout( function(){
-                            removeClassmm(element);
-                        }, 2000);  
-                });
-            function removeClassmm(element) {
-                $(element).removeClass( "animated bounce" ); 
-            }
+ 
          });
       </script>
       <!-- end js model -->
