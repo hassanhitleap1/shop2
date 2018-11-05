@@ -44,7 +44,7 @@
                <p class="card-text">{{ substr($product->description,0,100)}}</p>
             </div>
             <div class="card-footer">
-               <i class="far fa-heart"></i> <small class="text-muted">{{ $product->loves_count}} love this </small>
+               <i class="far fa-heart"></i> <small class="text-muted">{{ rand ( 200 , 1000 )}} love this </small>
                <a href="{{$product->link}}" class="btn btn-primary btn-sm float-right " target="_blank">Check out</a>
             </div>
          </div>

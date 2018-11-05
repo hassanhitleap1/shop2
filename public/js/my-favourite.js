@@ -59,7 +59,7 @@ var page = 1; //track user scroll as page number, right now page number is 1
             '                     <p class="card-text">' + value.product.description.substring(0, 100) + '.</p>\n' +
                 '                  </div>\n' +
                 '                  <div class="card-footer">\n' +
-                '                     <i class="far fa-heart"></i> <small class="text-muted">'+ value.product.loves_count +' love this </small>\n' +
+                '                     <i class="far fa-heart"></i> <small class="text-muted">' + (Math.floor(Math.random() * 1000) + 200) +' love this </small>\n' +
             '                     <a href="' + value.product.link + '" class="btn btn-primary btn-sm float-right " target="_blank" >Check out</a>\n' +
                 '                  </div>\n' +
                 '               </div>\n' +
