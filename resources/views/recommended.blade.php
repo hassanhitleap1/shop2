@@ -6,15 +6,15 @@
    <div class="row pb-2 mt-4 mb-2">
       <div class="col-md-6">
          <ul class="list-inline dawnlist">
-            <li class="list-inline-item active animate" ><a href="{{url('/')}}">Home</a></li>
-            <li class="list-inline-item active animate"><a href="{{url('/popular')}}">Popular</a></li>
-            <li class="list-inline-item active animate"><a href="{{url('/recommended')}}">Recommended</a></li>
+            <li class="list-inline-item active animate" ><a href="{{url('/')}}"> {{__('lang.Home')}}</a></li>
+            <li class="list-inline-item active animate"><a href="{{url('/popular')}}">{{__('lang.Popular')}} </a></li>
+            <li class="list-inline-item active animate"><a href="{{url('/recommended')}}">{{__('lang.Recommended')}} </a></li>
          </ul>
       </div>
       <div class="col-md-6">
          <form  action="{{url('/')}}" method="GET">
             <div class="input-group  mt-2 ">
-               <input type="text" class="form-control" placeholder="search" aria-label="Recipient's username"
+               <input type="text" class="form-control" placeholder="{{__('lang.Search')}} " aria-label="Recipient's username"
                   aria-describedby="basic-addon2" name="search">
                <div class="input-group-append">
                   <span class="input-group-text" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i> </span>
@@ -27,9 +27,9 @@
    <div class="row" id="products">
    </div>
    <div class="more" id="more"    search="{{isset($_GET['search'])?$_GET['search']:''}}">
-      <a href="#"><i class="fa fa-long-arrow-down" aria-hidden="true"></i>More</a>
+      <a href="#"><i class="fa fa-long-arrow-down" aria-hidden="true"></i>{{__('lang.More')}}</a>
       <div class="ajax-load text-center" style="display:none">
-         <p><img src="http://demo.itsolutionstuff.com/plugin/loader.gif">Loading More post</p>
+         <p><img src="http://demo.itsolutionstuff.com/plugin/loader.gif">{{__('lang.More')}}</p>
       </div>
    </div>
 </div>

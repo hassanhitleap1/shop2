@@ -8,14 +8,14 @@
                  <div align="center ">
                     <span class="fas fa-home fa-2x mt-2"></span>
                  </div>
-                 <a class="nav-link" style="color: black !important ;" href="{{url('')}}">Home <span class="sr-only">(current)</span></a>
+                 <a class="nav-link" style="color: black !important ;" href="{{url('')}}">{{__('lang.Home')}} <span class="sr-only">(current)</span></a>
               </li>
-              <?php 
+              <?php
 use App\Category;
 
                 $categories = Category::all();;?>
-              @foreach ($categories as $category) 
-                  @if ($counter>5) @break; @endif 
+              @foreach ($categories as $category)
+                  @if ($counter>5) @break; @endif
                    <li   {{++$counter}} class="nav-item" style="background: {{$category->color}};">
                         <div align="center" >
                           <span class="{{$category->classes}} fa-2x mt-2"></span>
@@ -31,8 +31,8 @@ use App\Category;
                        More Category
                        </a>
                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              @foreach ($categories as $category) 
-                              <a class="dropdown-item" href="{{url('/?category='.$category->name)}}">{{$category->name}}</a> 
+                              @foreach ($categories as $category)
+                              <a class="dropdown-item" href="{{url('/?category='.$category->name)}}">{{$category->name}}</a>
                                @endforeach
                        </div>
                     </li>
