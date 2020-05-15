@@ -3,8 +3,10 @@
 <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="css/responsive.css" />
 <script src="{{asset('lib/jquery-3.3.1/jquery-3.3.1.slim.min.js')}}"></script>
-<script src="{{asset('lib/bootstrap-4.1.3/js/bootstrap.min.js')}}" ></script>
 <script src="{{asset('js/main.js')}}"></script>
-<script src="{{asset('lib/bootstrap-4.1.3/js/bootstrap.min.js')}}" ></script>
 <link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
+
+
+
+
